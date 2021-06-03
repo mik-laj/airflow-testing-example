@@ -20,6 +20,12 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.9
+      - uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-e2e-test-${{ hashFiles('**/requirements-e2e-test.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-e2e-test-
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip wheel
@@ -38,6 +44,12 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.9
+      - uses: actions/cache@v2
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-test-${{ hashFiles('**/requirements-test.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-test-
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip wheel
