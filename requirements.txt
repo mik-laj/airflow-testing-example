@@ -1,2 +1,2 @@
--r requirements-e2e-tests.txt
--r requirements-tests.txt
+-r requirements-e2e-test.txt
+-r requirements-test.txt
