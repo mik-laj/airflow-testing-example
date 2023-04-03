@@ -1,2 +1,2 @@
-apache-airflow==2.1.0
+apache-airflow==2.5.3
 pytest==6.2.4
